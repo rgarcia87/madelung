@@ -1,0 +1,170 @@
+rgarcia@msi:~/git/madelung$ python3
+Python 3.8.5 (default, Jan 27 2021, 15:41:15) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> A=[i for i in [2,3,4] ]
+>>> print(A)
+[2, 3, 4]
+>>> A=[i^2 for i in [2,3,4] ]
+>>> print(A)
+[0, 1, 6]
+>>> A=[i^2 for i in [2,3,4] ]
+>>> print(A)
+[0, 1, 6]
+>>> A=[i**2 for i in [2,3,4] ]
+>>> print(A)
+[4, 9, 16]
+>>> import numpy
+>>> B=numpy
+numpy
+>>> B=numpy.a
+numpy.abs(                numpy.arange(             numpy.array_equiv(
+numpy.absolute(           numpy.arccos(             numpy.array_repr(
+numpy.add(                numpy.arccosh(            numpy.array_split(
+numpy.add_docstring(      numpy.arcsin(             numpy.array_str(
+numpy.add_newdoc(         numpy.arcsinh(            numpy.asanyarray(
+numpy.add_newdoc_ufunc(   numpy.arctan(             numpy.asarray(
+numpy.alen(               numpy.arctan2(            numpy.asarray_chkfinite(
+numpy.all(                numpy.arctanh(            numpy.ascontiguousarray(
+numpy.allclose(           numpy.argmax(             numpy.asfarray(
+numpy.alltrue(            numpy.argmin(             numpy.asfortranarray(
+numpy.amax(               numpy.argpartition(       numpy.asmatrix(
+numpy.amin(               numpy.argsort(            numpy.asscalar(
+numpy.angle(              numpy.argwhere(           numpy.atleast_1d(
+numpy.any(                numpy.around(             numpy.atleast_2d(
+numpy.append(             numpy.array(              numpy.atleast_3d(
+numpy.apply_along_axis(   numpy.array2string(       numpy.average(
+numpy.apply_over_axes(    numpy.array_equal(        
+>>> B=numpy.array
+numpy.array(         numpy.array_equal(   numpy.array_repr(    numpy.array_str(
+numpy.array2string(  numpy.array_equiv(   numpy.array_split(   
+>>> B=numpy.array([i**2 for i in [2,3,4] ])
+>>> print B
+  File "<stdin>", line 1
+    print B
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(B)?
+>>> print(B)
+[ 4  9 16]
+>>> print(A)
+[4, 9, 16]
+>>> type(A)
+<class 'list'>
+>>> type(B)
+<class 'numpy.ndarray'>
+>>> B=numpy.array([i**2 for i in [2,3,4] ])
+>>> set
+set(      setattr(  
+>>> set
+set(      setattr(  
+>>> set
+set(      setattr(  
+>>> set
+set(      setattr(  
+>>> set
+set(      setattr(  
+>>> range(4)
+range(0, 4)
+>>> range(0,4)
+range(0, 4)
+>>> for i in [range(0,4)] : 
+... print(i)
+  File "<stdin>", line 2
+    print(i)
+    ^
+IndentationError: expected an indented block
+>>> for i in range(0,4) : 
+...     print(I)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'I' is not defined
+>>> for i in range(0,4) : 
+...     print(i)
+... 
+0
+1
+2
+3
+>>> for i in range(-10,10) : 
+...     print(i)
+... 
+-10
+-9
+-8
+-7
+-6
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> lst = [6, 8, 95, 2, 12, 152, 4, 78, 621, 45]
+>>> total = sum(x * (1 - (x % 2 * 2)) for x in lst)
+>>> print(total)
+-499
+>>> B=[i+j for i in [2,3,4] , for j in [3,4,5] ])
+  File "<stdin>", line 1
+    B=[i+j for i in [2,3,4] , for j in [3,4,5] ])
+                            ^
+SyntaxError: invalid syntax
+>>> B=[i+j for i in [2,3,4] and for j in [3,4,5] ])
+  File "<stdin>", line 1
+    B=[i+j for i in [2,3,4] and for j in [3,4,5] ])
+                                ^
+SyntaxError: invalid syntax
+>>> B=[i+j for i,j in [2,3,4] ])
+  File "<stdin>", line 1
+    B=[i+j for i,j in [2,3,4] ])
+                               ^
+SyntaxError: unmatched ')'
+>>> B=[i+j for i,j in [2,3,4] ]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+TypeError: cannot unpack non-iterable int object
+>>> B=[i+j for i in [2,3,4] ]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+NameError: name 'j' is not defined
+>>> B=[i for i in [2,3,4] ]
+>>> print B
+  File "<stdin>", line 1
+    print B
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(B)?
+>>> print(B)
+[2, 3, 4]
+>>> B=[i for i,j in [2,3,4] ]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+TypeError: cannot unpack non-iterable int object
+>>> B=[i for (i,j) in [2,3,4] ]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+TypeError: cannot unpack non-iterable int object
+>>> B=[i+k for i in [2,3,4] for j in [5,6,7] ]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+NameError: name 'k' is not defined
+>>> B=[i+j for i in [2,3,4] for j in [5,6,7] ]
+>>> print(B)
+[7, 8, 9, 8, 9, 10, 9, 10, 11]
+>>> B=[[i+j,i*j] for i in [2,3,4] for j in [5,6,7] ]
+>>> print(B)
+[[7, 10], [8, 12], [9, 14], [8, 15], [9, 18], [10, 21], [9, 20], [10, 24], [11, 28]]
+>>> 
